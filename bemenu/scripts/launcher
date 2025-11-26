@@ -1,0 +1,26 @@
+#!/bin/sh
+
+BEMENU_OPTS="--no-overlap --bottom --fn 'JetBrainsMono Nerd Font 12'"
+
+apps=$(find /usr/share/applications ~/.local/share/applications -maxdepth 1 -type f -name "*.desktop" 2>/dev/null | sed 's/.*\///; s/\.desktop$//')
+
+input=$(printf '%s\n' "$apps" | bemenu $BEMENU_OPTS)
+[ -z "$input" ] && exit
+
+if printf '%s\n' "$apps" | grep -Fxq "$input"; then
+  gtk-launch "$input"
+  exit
+fi
+
+if printf '%s' "$input" | grep -Eiq '^https?://'; then
+  xdg-open "$input"
+  exit
+fi
+
+if printf '%s' "$input" | grep -Eiq '\.(com|org|net|gr|edu|gov|io|dev|info|ai)(/.*)?$'; then
+  xdg-open "https://$input"
+  exit
+fi
+
+query=$(printf '%s' "$input" | sed 's/ /+/g')
+xdg-open "https://www.google.com/search?q=$query"

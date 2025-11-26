@@ -1,0 +1,2 @@
+#!/bin/sh
+cliphist list | awk '{$1=""; $2=""; print $0}' | bemenu --no-overlap --bottom --fn 'JetBrainsMono Nerd Font 12' "$@" | cliphist decode | wl-copy
