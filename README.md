@@ -29,7 +29,7 @@ If you *insist* on using this anyway (you fool), you must:
 * Be okay with your system being wide open
 * Know what Arch Linux is
 * Understand that your security is now a myth
-* **Have the username `iceol8ed`**, or the script will not work and you will suffer
+* Have the username `iceol8ed`, or the script will not work and you will suffer
 * Accept that strange things may happen
 
 ## 🤷 Why Does This Exist?
