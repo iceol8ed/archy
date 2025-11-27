@@ -1,16 +1,3 @@
-Perfect! Let's do this in **two steps**:
-
----
-
-## **Step 1 — First sarcastic README, updated with the lines you liked**
-
-Here’s the **original funny/sarcastic version**, now including:
-
-> Because automation is life.
-> Because laziness is a virtue.
-
----
-
 # **archy — Because I’m Too Lazy To Set Up Arch Twice**
 
 Welcome to **archy**, my extremely *professional*, *perfectly engineered*, and *absolutely secure* Arch Linux setup script.
