@@ -88,6 +88,23 @@ echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >>/etc/sudoers
 echo "[*] Changing default shell to zsh ..."
 chsh -s /bin/zsh "$USER"
 
+echo "[*] Installing Prezto framework ..."
+sudo -u "$USER" zsh -c '
+set -e
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/z*; do
+    ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+'
+
+echo "[*] Configuring auto-launch of Hyprland on login ..."
+# Add to .zprofile to start Hyprland when a TTY is opened
+sudo -u "$USER" bash -c 'echo "
+if [[ -z \$DISPLAY ]] && [[ \$(tty) == /dev/tty1 ]]; then
+    exec Hyprland
+fi
+" >> /home/'"$USER"'/.zprofile'
+
 echo "[*] Cleaning up: deleting script folder ..."
 cd /
 rm -rf "$SCRIPT_DIR"
