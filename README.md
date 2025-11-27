@@ -1,4 +1,4 @@
-## 👑 **archy — Because My Fingers Are Too Delicate For A Second Manual Install**
+## 💣 **archy — Because My Fingers Are Too Delicate For A Second Manual Install**
 
 Welcome to **archy**, my extremely *professional*, *perfectly engineered*, and *absolutely secure* Arch Linux setup script. I spared no expense... in time-saving shortcuts.
 
