@@ -8,7 +8,6 @@ Welcome to **archy**. It turns a vanilla Arch install into a chaotic but functio
 
   * **Aggressive Dotfile Deployment:** Overwrites existing configs with my preferred spaghetti code.
   * **The "Trust Me Bro" Security Model:** Enables passwordless `sudo`. Great for speed, terrible for shared computers.
-  * **User Check:** Strictly enforces the username `iceol8ed`. If you aren't me, you're going to have a bad time.
   * **Auto-Cleanup:** Removes itself after execution to keep your home folder pristine.
 
 ### 🤷 Why?
