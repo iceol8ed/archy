@@ -35,7 +35,6 @@ if [[ ! -d "$HOME_DIR" ]]; then
 fi
 # -------------------------------------
 
-# Retry function for commands that may fail
 retry_cmd() {
   local attempts=5
   local delay=3
@@ -52,7 +51,7 @@ retry_cmd() {
         exit 1
       fi
     }
-  }
+  done # <--- Change the problematic '}' to 'done' to close the 'while true; do' loop
 }
 
 SCRIPT_DIR="$(cd -- "$(dirname "$0")" && pwd)"
