@@ -52,7 +52,7 @@ retry_cmd() {
         exit 1
       fi
     }
-  done
+  }
 }
 
 SCRIPT_DIR="$(cd -- "$(dirname "$0")" && pwd)"
@@ -131,17 +131,14 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/z*; do
 done
 '
 
-echo "[*] Configuring auto-launch of Hyprland on login ..."
-sudo -u "$TARGET_USER" bash -c 'echo "
-if [[ -z \$DISPLAY ]] && [[ \$(tty) == /dev/tty1 ]]; then
-    exec Hyprland
-fi
-" >> '"$HOME_DIR"'/.zprofile'
+# --- START: NEW/MODIFIED BLOCK FOR PREZTO CONFIG ---
+echo "[*] Copying custom Prezto runcoms from z/ to $HOME_DIR/.zprezto/runcoms/ ..."
+# The cp -f (force) ensures they overwrite existing files
+cp -f "$SCRIPT_DIR/z/"* "$HOME_DIR/.zprezto/runcoms/"
+chown -R "$TARGET_USER:$TARGET_USER" "$HOME_DIR/.zprezto/runcoms/"
+# --- END: NEW/MODIFIED BLOCK FOR PREZTO CONFIG ---
 
-echo "[*] Clearing ALL pacman and paru caches..."
-pacman -Scc --noconfirm
-
-sudo -u "$TARGET_USER" paru -Scc --noconfirm
+# Removed: Auto-launch of Hyprland on login block
 
 echo "[*] Cleaning up: deleting script folder ..."
 cd /
