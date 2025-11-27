@@ -12,7 +12,7 @@ This entire repository exists solely because I firmly believe that manually conf
 This script is highly customized to my **specific, bizarre, and terrible** preferences.
 
 Unless you are **me**, you probably shouldn't run this.
-Actually, even if you *are me* from two years ago, you shouldn't run this.
+Actually, even if you *are me*, you really shouldn't run this.
 
 ### What Horrors Does It Commit?
 
