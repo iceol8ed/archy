@@ -17,7 +17,7 @@ Because Laziness as a Virtue
 Because 
 
 ### 🚀 Installation
-sd
+
 ```bash
 git clone https://github.com/iceol8ed/archy
 cd archy
