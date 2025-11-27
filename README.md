@@ -24,5 +24,5 @@ cd archy
 chmod +x install.sh
 sudo ./install.sh
 ```
-
+> **A Quick Note on Features:** While running, the script **might** ask for your `sudo` password, or it **might not**. I haven't really checked, and frankly, I don't care enough to fix it. Consider it a **feature**, not a bug. It keeps you on your toes.
 **Disclaimer:** This script is provided "as is," without warranty of any kind, express or implied. If it turns your background into a picture of a cat, that's a feature.
