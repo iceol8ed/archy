@@ -13,7 +13,6 @@ Welcome to **archy**. It turns a vanilla Arch install into a chaotic but functio
 ### 🤷 Why?
 
 Because Laziness as a Virtue
-Because 
 
 ### 🚀 Installation
 
