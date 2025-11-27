@@ -9,20 +9,20 @@ set -e
 # 3. If running as root without SUDO (rare), prompt for the username.
 
 if [[ $EUID -ne 0 ]]; then
-  # Not running as root, current user is the target.
-  TARGET_USER="$USER"
-  echo "[*] Target user detected: $TARGET_USER (current user)"
+  # Not running as root, current user is the target.
+  TARGET_USER="$USER"
+  echo "[*] Target user detected: $TARGET_USER (current user)"
 elif [[ -n "$SUDO_USER" && "$SUDO_USER" != "root" ]]; then
-  # Running via sudo, use the original user.
-  TARGET_USER="$SUDO_USER"
-  echo "[*] Target user detected: $TARGET_USER (via SUDO_USER)"
+  # Running via sudo, use the original user.
+  TARGET_USER="$SUDO_USER"
+  echo "[*] Target user detected: $TARGET_USER (via SUDO_USER)"
 else
-  # Running as root without SUDO_USER set, prompt the user.
-  read -rp "[?] Please enter the name of the user to configure (e.g., your login name): " TARGET_USER
-  if [[ -z "$TARGET_USER" ]]; then
-    echo "[!] No username provided. Exiting."
-    exit 1
-  fi
+  # Running as root without SUDO_USER set, prompt the user.
+  read -rp "[?] Please enter the name of the user to configure (e.g., your login name): " TARGET_USER
+  if [[ -z "$TARGET_USER" ]]; then
+    echo "[!] No username provided. Exiting."
+    exit 1
+  fi
 fi
 
 # Set HOME directory for the target user
@@ -30,29 +30,29 @@ HOME_DIR="/home/$TARGET_USER"
 
 # Check if the home directory exists
 if [[ ! -d "$HOME_DIR" ]]; then
-  echo "[!] Home directory $HOME_DIR does not exist. Please create the user first. Exiting."
-  exit 1
+  echo "[!] Home directory $HOME_DIR does not exist. Please create the user first. Exiting."
+  exit 1
 fi
 # -------------------------------------
 
 # Retry function for commands that may fail
 retry_cmd() {
-  local attempts=5
-  local delay=3
-  local n=1
+  local attempts=5
+  local delay=3
+  local n=1
 
-  while true; do
-    "$@" && break || {
-      if [[ $n -lt $attempts ]]; then
-        echo "[!] Command failed. Retry $n/$attempts..."
-        sleep $delay
-        ((n++))
-      else
-        echo "[!] Command failed after $attempts attempts. Exiting."
-        exit 1
-      fi
-    }
-  done
+  while true; do
+    "$@" && break || {
+      if [[ $n -lt $attempts ]]; then
+        echo "[!] Command failed. Retry $n/$attempts..."
+        sleep $delay
+        ((n++))
+      else
+        echo "[!] Command failed after $attempts attempts. Exiting."
+        exit 1
+      fi
+    }
+  done
 }
 
 SCRIPT_DIR="$(cd -- "$(dirname "$0")" && pwd)"
@@ -95,10 +95,10 @@ mkinitcpio -P
 
 echo "[*] Installing base packages ..."
 retry_cmd pacman -S --noconfirm --needed \
-  hyprland xdg-desktop-portal-hyprland hyprshot wl-clipboard mpv \
-  bemenu-wayland nvim foot swaybg polkit-kde-agent cliphist fastfetch \
-  btop zip unzip zsh ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
-  noto-fonts noto-fonts-emoji noto-fonts-cjk curl wget base-devel yazi
+  hyprland xdg-desktop-portal-hyprland hyprshot wl-clipboard mpv \
+  bemenu-wayland nvim foot swaybg polkit-kde-agent cliphist fastfetch \
+  btop zip unzip zsh ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
+  noto-fonts noto-fonts-emoji noto-fonts-cjk curl wget base-devel yazi
 
 echo "[*] Installing paru (AUR helper) ..."
 cd "$HOME_DIR"
@@ -114,7 +114,7 @@ fc-cache -fv
 
 echo "[*] Installing AUR packages with paru ..."
 retry_cmd sudo -u "$TARGET_USER" paru -S --noconfirm \
-  ungoogled-chromium-bin localsend-bin bibata-cursor-theme-bin curd
+  ungoogled-chromium-bin localsend-bin bibata-cursor-theme-bin curd
 
 echo "[*] Adding NOPASSWD to sudoers (insecure!) ..."
 echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >>/etc/sudoers
@@ -127,19 +127,39 @@ sudo -u "$TARGET_USER" zsh -c '
 set -e
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/z*; do
-    ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+    ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 '
 
 echo "[*] Configuring auto-launch of Hyprland on login ..."
 sudo -u "$TARGET_USER" bash -c 'echo "
 if [[ -z \$DISPLAY ]] && [[ \$(tty) == /dev/tty1 ]]; then
-    exec Hyprland
+    exec Hyprland
 fi
 " >> '"$HOME_DIR"'/.zprofile'
+
+# --- CACHE CLEANUP BLOCK (UPDATED) ---
+echo "[*] Clearing ALL pacman and paru caches (-Scc)..."
+# Clear the ENTIRE pacman cache (all packages)
+pacman -Scc --noconfirm
+# Clear the ENTIRE paru cache (all packages and build files)
+sudo -u "$TARGET_USER" paru -Scc --noconfirm
+# -------------------------------------
 
 echo "[*] Cleaning up: deleting script folder ..."
 cd /
 rm -rf "$SCRIPT_DIR"
 
-echo "[*] Done!"
+echo "[*] Done! System setup is complete."
+
+# --- REBOOT PROMPT BLOCK ---
+read -rp "[?] System configuration is complete. Would you like to reboot now? (Y/n): " REBOOT_CHOICE
+
+# Convert input to lowercase and check for 'y' or empty (default yes)
+if [[ -z "$REBOOT_CHOICE" || "$REBOOT_CHOICE" =~ ^[Yy]$ ]]; then
+  echo "[*] Rebooting system..."
+  reboot
+else
+  echo "[*] Not rebooting. Please reboot manually for changes to take full effect."
+fi
+# ---------------------------
