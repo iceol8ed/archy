@@ -2,6 +2,26 @@
 
 set -e
 
+# Retry function for commands that may fail
+retry_cmd() {
+  local attempts=5
+  local delay=3
+  local n=1
+
+  while true; do
+    "$@" && break || {
+      if [[ $n -lt $attempts ]]; then
+        echo "[!] Command failed. Retry $n/$attempts..."
+        sleep $delay
+        ((n++))
+      else
+        echo "[!] Command failed after $attempts attempts. Exiting."
+        exit 1
+      fi
+    }
+  done
+}
+
 SCRIPT_DIR="$(cd -- "$(dirname "$0")" && pwd)"
 USER="iceol8ed"
 
@@ -40,7 +60,7 @@ cp "$SCRIPT_DIR/mkinitcpio.conf" /etc/mkinitcpio.conf
 mkinitcpio -P
 
 echo "[*] Installing base packages ..."
-pacman -S --noconfirm --needed \
+retry_cmd pacman -S --noconfirm --needed \
   hyprland xdg-desktop-portal-hyprland hyprshot wl-clipboard mpv \
   bemenu nvim foot swaybg polkit-kde-agent cliphist fastfetch \
   btop zip unzip zsh ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
@@ -59,7 +79,7 @@ echo "[*] Running fc-cache ..."
 fc-cache -fv
 
 echo "[*] Installing AUR packages with paru ..."
-sudo -u "$USER" paru -S --noconfirm \
+retry_cmd sudo -u "$USER" paru -S --noconfirm \
   ungoogled-chromium-bin localsend-bin bibata-cursor-theme-bin curd
 
 echo "[*] Adding NOPASSWD to sudoers (insecure!) ..."
