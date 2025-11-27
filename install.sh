@@ -51,6 +51,7 @@ EOF
 
 echo "[*] Replacing mirrorlist ..."
 cp "$SCRIPT_DIR/mirrorlist" /etc/pacman.d/mirrorlist
+cp "$SCRIPT_DIR/pacman.conf" /etc/pacman.conf
 
 echo "[*] Updating system ..."
 pacman -Syyu --noconfirm
