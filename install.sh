@@ -2,6 +2,39 @@
 
 set -e
 
+# --- USER DETECTION AND VALIDATION ---
+# Determine the target user.
+# 1. Check if running as root with SUDO (in which case, SUDO_USER is the target).
+# 2. If not running via SUDO, assume the current user is the target user.
+# 3. If running as root without SUDO (rare), prompt for the username.
+
+if [[ $EUID -ne 0 ]]; then
+  # Not running as root, current user is the target.
+  TARGET_USER="$USER"
+  echo "[*] Target user detected: $TARGET_USER (current user)"
+elif [[ -n "$SUDO_USER" && "$SUDO_USER" != "root" ]]; then
+  # Running via sudo, use the original user.
+  TARGET_USER="$SUDO_USER"
+  echo "[*] Target user detected: $TARGET_USER (via SUDO_USER)"
+else
+  # Running as root without SUDO_USER set, prompt the user.
+  read -rp "[?] Please enter the name of the user to configure (e.g., your login name): " TARGET_USER
+  if [[ -z "$TARGET_USER" ]]; then
+    echo "[!] No username provided. Exiting."
+    exit 1
+  fi
+fi
+
+# Set HOME directory for the target user
+HOME_DIR="/home/$TARGET_USER"
+
+# Check if the home directory exists
+if [[ ! -d "$HOME_DIR" ]]; then
+  echo "[!] Home directory $HOME_DIR does not exist. Please create the user first. Exiting."
+  exit 1
+fi
+# -------------------------------------
+
 # Retry function for commands that may fail
 retry_cmd() {
   local attempts=5
@@ -23,41 +56,41 @@ retry_cmd() {
 }
 
 SCRIPT_DIR="$(cd -- "$(dirname "$0")" && pwd)"
-USER="iceol8ed"
 
-echo "[*] Copying dotfiles to ~/.config ..."
-mkdir -p "/home/$USER/.config"
+# --- CONFIGURATION COPY BLOCK ---
+echo "[*] Copying dotfiles from configs/ to $HOME_DIR/.config ..."
+mkdir -p "$HOME_DIR/.config"
 
 shopt -s dotglob
-for item in "$SCRIPT_DIR"/*; do
-  base="$(basename "$item")"
-  # Skip the script and special files
-  if [[ "$base" == "install.sh" ]] || [[ "$base" == "mirrorlist" ]] || [[ "$base" == "mkinitcpio.conf" ]]; then
-    continue
-  fi
-  cp -r "$item" "/home/$USER/.config/"
-done
+# We copy everything inside configs/ to ~/.config/
+cp -r "$SCRIPT_DIR/configs/"* "$HOME_DIR/.config/"
 shopt -u dotglob
 
-chown -R "$USER:$USER" "/home/$USER/.config"
+# Ensure ownership is correct for the copied files
+chown -R "$TARGET_USER:$TARGET_USER" "$HOME_DIR/.config"
+# --------------------------------
 
-echo "[*] Enabling autologin for $USER ..."
+echo "[*] Enabling autologin for $TARGET_USER ..."
 mkdir -p /etc/systemd/system/getty@tty1.service.d
 cat >/etc/systemd/system/getty@tty1.service.d/autologin.conf <<EOF
 [Service]
 ExecStart=
-ExecStart=-/usr/bin/agetty --autologin $USER --noclear %I 38400 linux
+ExecStart=-/usr/bin/agetty --autologin $TARGET_USER --noclear %I 38400 linux
 EOF
 
-echo "[*] Replacing mirrorlist ..."
-cp "$SCRIPT_DIR/mirrorlist" /etc/pacman.d/mirrorlist
-cp "$SCRIPT_DIR/pacman.conf" /etc/pacman.conf
+# --- SYSTEM CONFIGS BLOCK ---
+echo "[*] Replacing mirrorlist and pacman.conf from sysconfigs/ ..."
+cp "$SCRIPT_DIR/sysconfigs/mirrorlist" /etc/pacman.d/mirrorlist
+cp "$SCRIPT_DIR/sysconfigs/pacman.conf" /etc/pacman.conf
+# ----------------------------
 
 echo "[*] Updating system ..."
-pacman -Syyu --noconfirm
+pacman -Syy --noconfirm
 
 echo "[*] Replacing mkinitcpio.conf and rebuilding initramfs ..."
-cp "$SCRIPT_DIR/mkinitcpio.conf" /etc/mkinitcpio.conf
+# --- MKINITCPIO BLOCK ---
+cp "$SCRIPT_DIR/sysconfigs/mkinitcpio.conf" /etc/mkinitcpio.conf
+# ------------------------
 mkinitcpio -P
 
 echo "[*] Installing base packages ..."
@@ -68,11 +101,11 @@ retry_cmd pacman -S --noconfirm --needed \
   noto-fonts noto-fonts-emoji noto-fonts-cjk curl wget base-devel yazi
 
 echo "[*] Installing paru (AUR helper) ..."
-cd /home/$USER
+cd "$HOME_DIR"
 git clone https://aur.archlinux.org/paru.git
-chown -R "$USER:$USER" paru
+chown -R "$TARGET_USER:$TARGET_USER" paru
 cd paru
-sudo -u "$USER" makepkg -si --noconfirm
+sudo -u "$TARGET_USER" makepkg -si --noconfirm
 cd ..
 rm -rf paru
 
@@ -80,17 +113,17 @@ echo "[*] Running fc-cache ..."
 fc-cache -fv
 
 echo "[*] Installing AUR packages with paru ..."
-retry_cmd sudo -u "$USER" paru -S --noconfirm \
+retry_cmd sudo -u "$TARGET_USER" paru -S --noconfirm \
   ungoogled-chromium-bin localsend-bin bibata-cursor-theme-bin curd
 
 echo "[*] Adding NOPASSWD to sudoers (insecure!) ..."
 echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >>/etc/sudoers
 
 echo "[*] Changing default shell to zsh ..."
-chsh -s /bin/zsh "$USER"
+chsh -s /bin/zsh "$TARGET_USER"
 
 echo "[*] Installing Prezto framework ..."
-sudo -u "$USER" zsh -c '
+sudo -u "$TARGET_USER" zsh -c '
 set -e
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/z*; do
@@ -99,12 +132,11 @@ done
 '
 
 echo "[*] Configuring auto-launch of Hyprland on login ..."
-# Add to .zprofile to start Hyprland when a TTY is opened
-sudo -u "$USER" bash -c 'echo "
+sudo -u "$TARGET_USER" bash -c 'echo "
 if [[ -z \$DISPLAY ]] && [[ \$(tty) == /dev/tty1 ]]; then
     exec Hyprland
 fi
-" >> /home/'"$USER"'/.zprofile'
+" >> '"$HOME_DIR"'/.zprofile'
 
 echo "[*] Cleaning up: deleting script folder ..."
 cd /
