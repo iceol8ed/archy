@@ -151,8 +151,8 @@ echo "[*] Done!"
 
 read -rp "[?] System configuration is complete. Would you like to reboot now? (Y/n): " REBOOT_CHOICE
 if [[ -z "$REBOOT_CHOICE" || "$REBOOT_CHOICE" =~ ^[Yy]$ ]]; then
-    echo "[*] Rebooting system..."
-    reboot
+  echo "[*] Rebooting system..."
+  reboot
 else
-    echo "[*] Not rebooting. Please reboot manually for changes to take full effect."
+  echo "[*] Not rebooting. Please reboot manually for changes to take full effect."
 fi
