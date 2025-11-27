@@ -12,7 +12,7 @@ Welcome to **archy**. It turns a vanilla Arch install into a chaotic but functio
 
 ### 🤷 Why?
 
-  * Because Automation is Life
+  * Because Automation is Life 
   * Because Laziness is a Virtue
 
 ### 🚀 Installation
