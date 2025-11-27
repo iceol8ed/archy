@@ -138,8 +138,21 @@ if [[ -z \$DISPLAY ]] && [[ \$(tty) == /dev/tty1 ]]; then
 fi
 " >> '"$HOME_DIR"'/.zprofile'
 
+echo "[*] Clearing ALL pacman and paru caches..."
+pacman -Scc --noconfirm
+
+sudo -u "$TARGET_USER" paru -Scc --noconfirm
+
 echo "[*] Cleaning up: deleting script folder ..."
 cd /
 rm -rf "$SCRIPT_DIR"
 
 echo "[*] Done!"
+
+read -rp "[?] System configuration is complete. Would you like to reboot now? (Y/n): " REBOOT_CHOICE
+if [[ -z "$REBOOT_CHOICE" || "$REBOOT_CHOICE" =~ ^[Yy]$ ]]; then
+    echo "[*] Rebooting system..."
+    reboot
+else
+    echo "[*] Not rebooting. Please reboot manually for changes to take full effect."
+fi
