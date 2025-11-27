@@ -7,7 +7,7 @@ This entire repository exists solely because I firmly believe that manually conf
 
 -----
 
-## ⚠️ Warning: Do Not Use This (Seriously, Don't) 🗑️
+## ⚠️ Warning: Do Not Use This (Seriously, Don't)
 
 This script is highly customized to my **specific, bizarre, and terrible** preferences.
 
@@ -27,7 +27,7 @@ So if you run this and your PC begins mining Bitcoin for a Russian oligarch, tha
 
 -----
 
-## ✔️ Requirements: The High Cost of Convenience 💸
+## ✔️ Requirements: The High Cost of Convenience
 
 If you *insist* on using this anyway (you magnificent fool), you must meet these highly unreasonable demands:
 
