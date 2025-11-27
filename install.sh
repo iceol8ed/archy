@@ -85,7 +85,7 @@ cp "$SCRIPT_DIR/sysconfigs/pacman.conf" /etc/pacman.conf
 # ----------------------------
 
 echo "[*] Updating system ..."
-pacman -Syy --noconfirm
+pacman -Syyu --noconfirm
 
 echo "[*] Replacing mkinitcpio.conf and rebuilding initramfs ..."
 # --- MKINITCPIO BLOCK ---
