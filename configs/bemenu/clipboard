@@ -1,2 +1,2 @@
 #!/bin/sh
-cliphist list | awk '{$1=""; $2=""; print $0}' | bemenu --nb "#000000" --ab "#000000" --nf "#CCCCCC" --tb "#000000" --tf "#CCCCCC" --sb "#2149B4" --sf "#FFFFFF" --hb "#2149B4" --hf "#FFFFFF" --no-overlap --bottom --fn 'JetBrainsMono Nerd Font 12' "$@" | cliphist decode | wl-copy
+cliphist list | awk '{$1=""; $2=""; print $0}' | bemenu --tb "#000000" --fb "#000000" --cb "#000000" --nb "#000000" --hb "#000000" --sb "#000000" --fbb "#000000" --ab "#000000" --scb "#000000" --nf "#FFFFFF" --ff "#FFFFFF" --tf "#FFFFFF" --sf "#2149b4" --hf "#40C4FF" --no-overlap --bottom --fn 'JetBrainsMono Nerd Font 12' "$@" | cliphist decode | wl-copy
