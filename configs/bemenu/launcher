@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BEMENU_OPTS="--no-overlap --bottom --fn 'JetBrainsMono Nerd Font 12'"
+BEMENU_OPTS="bemenu-run --nb "#000000" --ab "#000000" --nf "#CCCCCC" --tb "#000000" --tf "#CCCCCC" --sb "#2149B4" --sf "#FFFFFF" --hb "#2149B4" --hf "#FFFFFF" --no-overlap --bottom --fn 'JetBrainsMono Nerd Font 12'"
 
 apps=$(find /usr/share/applications ~/.local/share/applications -maxdepth 1 -type f -name "*.desktop" 2>/dev/null | sed 's/.*\///; s/\.desktop$//')
 
