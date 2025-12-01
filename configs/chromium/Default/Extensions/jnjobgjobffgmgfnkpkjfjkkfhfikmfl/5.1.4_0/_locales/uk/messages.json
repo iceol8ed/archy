@@ -1,0 +1,179 @@
+{
+   "about_cta_feedback": {
+      "message": "Залишити відгук"
+   },
+   "about_cta_sponsor": {
+      "message": "Підтримати"
+   },
+   "about_developed_by": {
+      "message": "Розробник: Євген Лис"
+   },
+   "about_licensed_under": {
+      "message": ""
+   },
+   "about_links_changelog": {
+      "message": "Список змін"
+   },
+   "about_links_source": {
+      "message": "Вихідний код"
+   },
+   "about_links_website": {
+      "message": "Мій веб-сайт"
+   },
+   "about_mit_license": {
+      "message": "Ліцензія MIT"
+   },
+   "about_title": {
+      "message": "Про розширення"
+   },
+   "about_translation_cta_button": {
+      "message": "Почніть тут"
+   },
+   "about_translation_cta_text": {
+      "message": "Знайшли помилку або хочете переклад на вашу мову?"
+   },
+   "advanced_actions_copy_all": {
+      "message": "Копіювати все"
+   },
+   "advanced_actions_generate": {
+      "message": "Згенерувати"
+   },
+   "advanced_actions_save_config": {
+      "message": "Зберегти конфігурацію"
+   },
+   "advanced_copied_msg": {
+      "message": "Скопійовано у буфер обміну"
+   },
+   "advanced_passphrase_allow_repat_hint": {
+      "message": "Якщо вимкнено, кожне слово у фразі буде унікальним"
+   },
+   "advanced_passphrase_allow_repat_label": {
+      "message": "Дозволити повторення"
+   },
+   "advanced_passphrase_length": {
+      "message": "Кількість слів"
+   },
+   "advanced_passphrase_random_case": {
+      "message": "Випадковий регістр символів"
+   },
+   "advanced_passphrase_replace": {
+      "message": "Замінити випадкові символи"
+   },
+   "advanced_passphrase_separate_words_hint": {
+      "message": "Якщо увімкнено, вказана послідовність буде вставлена між кожним словом. Якщо поле порожнє - буде використано пробіл"
+   },
+   "advanced_passphrase_separate_words_label": {
+      "message": "Розділити слова"
+   },
+   "advanced_passphrase_title": {
+      "message": "Парольних фраз"
+   },
+   "advanced_password_length": {
+      "message": "Довжина пароля"
+   },
+   "advanced_password_min_of_type": {
+      "message": "Не менше"
+   },
+   "advanced_password_separator1": {
+      "message": "Додати розділювач"
+   },
+   "advanced_password_separator2": {
+      "message": "кожні"
+   },
+   "advanced_password_separator3": {
+      "message": "символів"
+   },
+   "advanced_password_title": {
+      "message": "Генератор паролів"
+   },
+   "advanced_saved_msg": {
+      "message": "Конфігурація збережена"
+   },
+   "advanced_title": {
+      "message": "Розширений генератор паролів"
+   },
+   "common_actions_copy": {
+      "message": "Копіювати"
+   },
+   "common_actions_reset": {
+      "message": "Скинути"
+   },
+   "common_characters_ambiguous": {
+      "message": "Особливі"
+   },
+   "common_characters_custom": {
+      "message": "Користувацькі"
+   },
+   "common_characters_lowercase": {
+      "message": "Малі"
+   },
+   "common_characters_numeric": {
+      "message": "Числові"
+   },
+   "common_characters_repeating_hint": {
+      "message": "Кожен символ пароля буде унікальним"
+   },
+   "common_characters_repeating_label": {
+      "message": "Повторювані"
+   },
+   "common_characters_similar": {
+      "message": "Схожі"
+   },
+   "common_characters_special": {
+      "message": "Спеціальні"
+   },
+   "common_characters_uppercase": {
+      "message": "Великі"
+   },
+   "common_sections_exclude": {
+      "message": "Виключити символи"
+   },
+   "common_sections_include": {
+      "message": "Додати символи"
+   },
+   "errors_no_characters": {
+      "message": "Необхідно вибрати хоча б один вид символів"
+   },
+   "errors_too_long": {
+      "message": "Вибрана довжина занадто велика, для генерації унікальних символів"
+   },
+   "errors_too_short": {
+      "message": "Мінімальна довжина пароля — 4 символи"
+   },
+   "manifest_author": {
+      "message": "Євген Лис"
+   },
+   "manifest_description": {
+      "message": "Розширення, яке допоможе вам легко створювати надійні та налаштовані паролі всього в декілька клацань"
+   },
+   "manifest_name": {
+      "message": "Генератор паролів"
+   },
+   "popup_advanced": {
+      "message": "Розширений"
+   },
+   "popup_exclude": {
+      "message": "Виключити"
+   },
+   "popup_include": {
+      "message": "Додати"
+   },
+   "popup_refresh": {
+      "message": "Згенерувати новий"
+   },
+   "settings_exclude_custom": {
+      "message": "Не використовувати ці символи:"
+   },
+   "settings_length_hint": {
+      "message": "Рекомендована довжина: 8–16"
+   },
+   "settings_length_title": {
+      "message": "Довжина пароля за замовчуванням"
+   },
+   "settings_quick_range": {
+      "message": "Діапазон довжини для швидких налаштувань"
+   },
+   "settings_title": {
+      "message": "Налаштування"
+   }
+}

@@ -1,0 +1,179 @@
+{
+   "about_cta_feedback": {
+      "message": "提供反馈"
+   },
+   "about_cta_sponsor": {
+      "message": "赞助开发者"
+   },
+   "about_developed_by": {
+      "message": "由 Eugene Fox 开发"
+   },
+   "about_licensed_under": {
+      "message": "协议："
+   },
+   "about_links_changelog": {
+      "message": "更新日志"
+   },
+   "about_links_source": {
+      "message": "源代码"
+   },
+   "about_links_website": {
+      "message": "我的网站"
+   },
+   "about_mit_license": {
+      "message": "MIT License"
+   },
+   "about_title": {
+      "message": "关于"
+   },
+   "about_translation_cta_button": {
+      "message": "从这里开始"
+   },
+   "about_translation_cta_text": {
+      "message": "发现错别字或需要翻译成您的语言？"
+   },
+   "advanced_actions_copy_all": {
+      "message": "复制全部"
+   },
+   "advanced_actions_generate": {
+      "message": "生成"
+   },
+   "advanced_actions_save_config": {
+      "message": "保存配置"
+   },
+   "advanced_copied_msg": {
+      "message": "已复制到剪贴板"
+   },
+   "advanced_passphrase_allow_repat_hint": {
+      "message": "如果禁用，密码短语中的每个单词都是唯一的"
+   },
+   "advanced_passphrase_allow_repat_label": {
+      "message": "允许重复"
+   },
+   "advanced_passphrase_length": {
+      "message": "单词数量"
+   },
+   "advanced_passphrase_random_case": {
+      "message": "随机大小写"
+   },
+   "advanced_passphrase_replace": {
+      "message": "替换随机字符"
+   },
+   "advanced_passphrase_separate_words_hint": {
+      "message": "如果启用，提供的序列将放置在每个单词之间。如果字段为空，将使用空格"
+   },
+   "advanced_passphrase_separate_words_label": {
+      "message": "用以下字符分隔单词"
+   },
+   "advanced_passphrase_title": {
+      "message": "密码短语生成器"
+   },
+   "advanced_password_length": {
+      "message": "密码长度"
+   },
+   "advanced_password_min_of_type": {
+      "message": "最少字符数"
+   },
+   "advanced_password_separator1": {
+      "message": "添加分隔符"
+   },
+   "advanced_password_separator2": {
+      "message": "每"
+   },
+   "advanced_password_separator3": {
+      "message": "个字符"
+   },
+   "advanced_password_title": {
+      "message": "密码生成器"
+   },
+   "advanced_saved_msg": {
+      "message": "配置已保存"
+   },
+   "advanced_title": {
+      "message": "高级密码生成器"
+   },
+   "common_actions_copy": {
+      "message": "复制"
+   },
+   "common_actions_reset": {
+      "message": "重置"
+   },
+   "common_characters_ambiguous": {
+      "message": "易混淆"
+   },
+   "common_characters_custom": {
+      "message": "自定义"
+   },
+   "common_characters_lowercase": {
+      "message": "小写字母"
+   },
+   "common_characters_numeric": {
+      "message": "数字"
+   },
+   "common_characters_repeating_hint": {
+      "message": "密码中的每个字符都将是独一无二的"
+   },
+   "common_characters_repeating_label": {
+      "message": "重复"
+   },
+   "common_characters_similar": {
+      "message": "相似"
+   },
+   "common_characters_special": {
+      "message": "特殊"
+   },
+   "common_characters_uppercase": {
+      "message": "大写字母"
+   },
+   "common_sections_exclude": {
+      "message": "排除字符"
+   },
+   "common_sections_include": {
+      "message": "包括字符"
+   },
+   "errors_no_characters": {
+      "message": "必须至少选择一组字符"
+   },
+   "errors_too_long": {
+      "message": "长度太长，无法生成具有唯一字符的密码"
+   },
+   "errors_too_short": {
+      "message": "密码的长度必须至少为4个字符"
+   },
+   "manifest_author": {
+      "message": "Eugene Fox"
+   },
+   "manifest_description": {
+      "message": "这个扩展可以帮助您轻松生成强大且可定制的密码"
+   },
+   "manifest_name": {
+      "message": "密码生成器"
+   },
+   "popup_advanced": {
+      "message": "高级"
+   },
+   "popup_exclude": {
+      "message": "排除"
+   },
+   "popup_include": {
+      "message": "包括"
+   },
+   "popup_refresh": {
+      "message": "刷新"
+   },
+   "settings_exclude_custom": {
+      "message": "不要使用这些字符："
+   },
+   "settings_length_hint": {
+      "message": "建议长度：8-16"
+   },
+   "settings_length_title": {
+      "message": "默认密码长度"
+   },
+   "settings_quick_range": {
+      "message": "快速调节长度范围"
+   },
+   "settings_title": {
+      "message": "设置"
+   }
+}

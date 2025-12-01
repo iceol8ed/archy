@@ -1,0 +1,434 @@
+{
+   "400": {
+      "message": "Serveris ziņo, ka šis pieprasījums ir nederīgs."
+   },
+   "409": {
+      "message": "Šis jau ir ticis aizsūtīts iepriekš."
+   },
+   "502": {
+      "message": "Šķiet, ka serveris ir pārslogots. Mēģiniet vēlreiz pēc dažām sekundēm."
+   },
+   "ActivateDeArrow": {
+      "message": "Aktivizēt DeArrow"
+   },
+   "ChangeCategoryTooltip": {
+      "message": "Tas nekavējoties tiks piemērots jūsu segmentiem"
+   },
+   "Chapters": {
+      "message": "Nodaļas"
+   },
+   "Close": {
+      "message": "Aizvērt"
+   },
+   "ContinueVoting": {
+      "message": "Turpināt Balsošanu"
+   },
+   "CopiedExclamation": {
+      "description": "Used after something has been copied to the clipboard. Example: 'Copied!'",
+      "message": "Nokopēts!"
+   },
+   "DeArrowIsActivated": {
+      "message": "DeArrow ir veiksmīgi aktivizēts"
+   },
+   "DeArrowIsDisabled": {
+      "description": "Appears as a button on the video page when DeArrow is disabled",
+      "message": "DeArrow ir atspējots — noklikšķiniet, lai iespējotu"
+   },
+   "DeArrowNotActivated": {
+      "message": "DeArrow nav aktivizēts"
+   },
+   "Description": {
+      "description": "Description of the extension.",
+      "message": "Izlaidiet sponsorus, abonēšanas lūgumus un vairāk, skatoties YouTube video. Ziņojiet par sponsoriem video, kurus jūs skatāties, lai ietaupītu citu laiku."
+   },
+   "Donate": {
+      "message": "Ziedot"
+   },
+   "Enable": {
+      "message": "Iespējot"
+   },
+   "End": {
+      "description": "Button that skips to the end of a segment",
+      "message": "Beigas"
+   },
+   "Error": {
+      "message": "Kļūda"
+   },
+   "FailedToLoad": {
+      "description": "Thumbnail failed to load",
+      "message": "Neizdevās ielādēt"
+   },
+   "FullDetails": {
+      "message": "Pilna Informācija"
+   },
+   "GotIt": {
+      "description": "Used as the button to dismiss a tooltip",
+      "message": "Labi"
+   },
+   "Hide": {
+      "message": "Nekad Nerādīt"
+   },
+   "Import": {
+      "description": "Button to initiate importing segments. Appears under the textbox where they paste in the data",
+      "message": "Importēt"
+   },
+   "LearnMore": {
+      "message": "Uzzināt Vairāk"
+   },
+   "Loading": {
+      "message": "Ielādē..."
+   },
+   "Middle": {
+      "message": "Vidus"
+   },
+   "Never": {
+      "message": "Nekad"
+   },
+   "OpenSubmissionMenu": {
+      "message": "Atvērt Iesniegšanas Izvēlni"
+   },
+   "Options": {
+      "message": "Iestatījumi"
+   },
+   "Segment": {
+      "message": "segments"
+   },
+   "Segments": {
+      "message": "segmentu"
+   },
+   "SegmentsCap": {
+      "message": "Segmenti"
+   },
+   "SharingIsCaring": {
+      "message": "Dalīšanās ir rūpes"
+   },
+   "Start": {
+      "message": "Sākums"
+   },
+   "Username": {
+      "message": "Lietotājvārds"
+   },
+   "VideoNotReady": {
+      "message": "Video nav gatavs"
+   },
+   "ViewLicenseKey": {
+      "message": "Skatīt Licences Atslēgu"
+   },
+   "Yes": {
+      "message": "Jā"
+   },
+   "add": {
+      "message": "Pievienot"
+   },
+   "areYouSureReset": {
+      "message": "Vai tiešām vēlaties to atiestatīt?"
+   },
+   "askAQuestion": {
+      "message": "Uzdot jautājumu"
+   },
+   "betaServerWarning": {
+      "message": "BETA Serveris ir iespējots!"
+   },
+   "bracketEnd": {
+      "message": "(Beigas)"
+   },
+   "bracketNow": {
+      "message": "(Tagad)"
+   },
+   "bracketStart": {
+      "message": "(Sākums)"
+   },
+   "cancel": {
+      "message": "Atcelt"
+   },
+   "category_exclusive_access": {
+      "message": "Ekskluzīva Piekļuve"
+   },
+   "change": {
+      "message": "Mainīt"
+   },
+   "chooseACategory": {
+      "message": "Izvēlieties Kategoriju"
+   },
+   "clearThis": {
+      "message": "Vai tiešām vēlaties to notīrīt?\n\n"
+   },
+   "clearTimes": {
+      "message": "Notīrīt Segmentus"
+   },
+   "closeIcon": {
+      "message": "Aizvēršanas Ikona"
+   },
+   "closePopup": {
+      "message": "Aizvērt Logu"
+   },
+   "connectionError": {
+      "description": "Appears in the popup above the refresh button if an error occurred when attempting to send a request. The error code or message will be appended below this string.",
+      "message": "Radusies savienojuma kļūda."
+   },
+   "copyPublicID": {
+      "message": "Kopēt publisko UserID"
+   },
+   "copySegmentID": {
+      "message": "Kopēt Segmenta ID"
+   },
+   "createdBy": {
+      "message": "Izveidoja"
+   },
+   "customServerAddress": {
+      "message": "SponsorBlock servera adrese"
+   },
+   "dayAbbreviation": {
+      "description": "100d",
+      "message": "d"
+   },
+   "delete": {
+      "message": "Dzēst"
+   },
+   "disableAutoSkip": {
+      "message": "Atspējot Automātisko Izlaišanu"
+   },
+   "disableSkipping": {
+      "message": "Izlaišana ir iespējota"
+   },
+   "downvote": {
+      "message": "Balsot pret"
+   },
+   "edit": {
+      "message": "Rediģēt"
+   },
+   "enableAutoSkip": {
+      "message": "Iespējot Automātisko Izlaišanu"
+   },
+   "enableSkipping": {
+      "message": "Izlaišana ir atspējota"
+   },
+   "exportOptions": {
+      "message": "Importēt/Eksportēt Visas Opcijas"
+   },
+   "exportOptionsCopy": {
+      "message": "Rediģēt/kopēt"
+   },
+   "exportOptionsDownload": {
+      "message": "Saglabāt failā"
+   },
+   "exportOptionsUpload": {
+      "message": "Ielādēt no faila"
+   },
+   "exportOtherData": {
+      "message": "Importēt/Eksportēt Visus Pārējos Datus"
+   },
+   "freeAccessComplete": {
+      "message": "Apsveicam! Tagad jums ir bezmaksas piekļuve DeArrow"
+   },
+   "full": {
+      "description": "Used for the name of the option to label an entire video as sponsor or self promotion.",
+      "message": "Pilns Video"
+   },
+   "fullName": {
+      "description": "Name of the extension.",
+      "message": "SponsorBlock priekš YouTube - Izlaid sponsorus"
+   },
+   "help": {
+      "message": "Palīdzība"
+   },
+   "hideForever": {
+      "message": "Slēpt uz visiem laikiem"
+   },
+   "hideSegment": {
+      "message": "Slēpt segmentu"
+   },
+   "hideThis": {
+      "message": "Slēpt šo"
+   },
+   "hourAbbreviation": {
+      "description": "100h",
+      "message": "st"
+   },
+   "hourLower": {
+      "message": "stunda"
+   },
+   "hoursLower": {
+      "message": "stundas"
+   },
+   "howItWorks": {
+      "message": "Kā tas darbojas"
+   },
+   "importSegments": {
+      "message": "Importēt Segmentus"
+   },
+   "manualPaused": {
+      "message": "Taimeris Apstādināts"
+   },
+   "minsLower": {
+      "message": "minūtes"
+   },
+   "mobileUpdateInfo": {
+      "message": "m.youtube.com tagad tiek atbalstīts"
+   },
+   "moreCategories": {
+      "message": "Vairāk Kategoriju"
+   },
+   "noVideoID": {
+      "message": "YouTube video netika atrasts. Ja šis nav pareizi, pārlādē lapu"
+   },
+   "notSet": {
+      "message": "Nav iestatīts"
+   },
+   "onAllPages": {
+      "description": "Setting for when the server-side thumbnail generator should be used for the thumbnail replacement feature.",
+      "message": "Visās Lapās"
+   },
+   "onAllPagesExceptVideo": {
+      "description": "Setting for when the server-side thumbnail generator should be used for the thumbnail replacement feature.",
+      "message": "Visās Lapās, Izņemot Video Lapas"
+   },
+   "openPopup": {
+      "message": "Atvērt SponsorBlock Uznirstošo logu"
+   },
+   "openSourceLicenses": {
+      "message": "Atvērtā Pirmkoda Licences"
+   },
+   "optionsTabBehavior": {
+      "description": "Appears in Options as a tab header for options related to categories and skipping behavior. To fit inside the button, it should not be longer than ~20-25 characters (depending on their width).",
+      "message": "Uzvedība"
+   },
+   "optionsTabInterface": {
+      "description": "Appears in Options as a tab header for options related to GUI and sounds. To fit inside the button, it should not be longer than ~20-25 characters (depending on their width).",
+      "message": "Interfeiss"
+   },
+   "paused": {
+      "message": "Apturēts"
+   },
+   "privacyPolicy": {
+      "message": "Privātuma Politika"
+   },
+   "questionButton": {
+      "message": "Man ir jautājums"
+   },
+   "readTheGuidelines": {
+      "description": "Show the first time they submit or if they are \"high risk\"",
+      "message": "Izlasiet Vadlīnijas!!"
+   },
+   "recordTimesDescription": {
+      "message": "Iesniegt"
+   },
+   "redeemFailed": {
+      "message": "Licences atslēga nav derīga"
+   },
+   "refreshSegments": {
+      "message": "Pārlādēt segmentus"
+   },
+   "reportButtonTitle": {
+      "message": "Sūdzēties"
+   },
+   "reset": {
+      "message": "Atiestatīt"
+   },
+   "save": {
+      "message": "Saglabāt"
+   },
+   "segmentsStillLoading": {
+      "message": "Segmenti joprojām ielādējas..."
+   },
+   "serverDown": {
+      "message": "Šķiet, ka serveris nedarbojas. Nekavējoties sazinieties ar izstrādātāju."
+   },
+   "setOpenSubmissionMenuKeybind": {
+      "description": "Keybind label",
+      "message": "Atvērt iesniegšanas izvēlni"
+   },
+   "setSkipShortcut": {
+      "description": "Keybind label",
+      "message": "Izlaist segmentu"
+   },
+   "setStartSponsorShortcut": {
+      "description": "Keybind label",
+      "message": "Sākt/apturēt segmentu"
+   },
+   "setUsername": {
+      "message": "Iestatīt Lietotājvārdu"
+   },
+   "showButtons": {
+      "message": "Rādīt pogas YouTube atskaņotājā"
+   },
+   "showUploadButton": {
+      "message": "Rādīt augšupielādes pogu"
+   },
+   "skip": {
+      "message": "Izlaist"
+   },
+   "skipSegment": {
+      "message": "Izlaist segmentu"
+   },
+   "skip_category": {
+      "message": "Izlaist {0}?"
+   },
+   "sortSegments": {
+      "message": "Kārtot Segmentus"
+   },
+   "sourceCode": {
+      "description": "Used on Firefox Store Page",
+      "message": "Pirmkods"
+   },
+   "sponsor404": {
+      "message": "Nav atrasts neviens segments"
+   },
+   "sponsorCancel": {
+      "message": "Beigt segmenta izveidi"
+   },
+   "sponsorEnd": {
+      "message": "Beigt segmentu"
+   },
+   "sponsorStart": {
+      "message": "Sākt Segmentu Tagad"
+   },
+   "submit": {
+      "message": "Iesniegt"
+   },
+   "submitCheck": {
+      "message": "Vai tiešām vēlaties to iesniegt?"
+   },
+   "success": {
+      "message": "Izdevās!"
+   },
+   "termsOfUse": {
+      "message": "Lietošanas Noteikumi"
+   },
+   "unmute": {
+      "message": "Ieslēgt skaņu"
+   },
+   "unskip": {
+      "message": "Atcelt izlaišanu"
+   },
+   "upcoming": {
+      "description": "Example: Upcoming Sponsor",
+      "message": "Gaidāmie {0}"
+   },
+   "upvote": {
+      "message": "Balsot par"
+   },
+   "viewLeaderboard": {
+      "message": "Līderu saraksts"
+   },
+   "voteOnTime": {
+      "message": "Balsot Par Segmentu"
+   },
+   "voted": {
+      "message": "Nobalsots!"
+   },
+   "warningConfirmButton": {
+      "message": "Es saprotu iemeslu"
+   },
+   "website": {
+      "description": "Used on Firefox Store Page",
+      "message": "Tīmekļa vietne"
+   },
+   "whatExportOptions": {
+      "message": "Šī ir visa jūsu konfigurācija JSON formātā. Tas ietver arī jūsu Privāto lietotāja ID, tāpēc noteikti kopīgojiet to saprātīgi."
+   },
+   "yearAbbreviation": {
+      "description": "100y",
+      "message": "g"
+   }
+}

@@ -1,0 +1,179 @@
+{
+   "about_cta_feedback": {
+      "message": "Enviar comentários"
+   },
+   "about_cta_sponsor": {
+      "message": "Pague um café"
+   },
+   "about_developed_by": {
+      "message": "Desenvolvido por Eugênio Fox"
+   },
+   "about_licensed_under": {
+      "message": "Licenciado sob"
+   },
+   "about_links_changelog": {
+      "message": "Registro de alterações"
+   },
+   "about_links_source": {
+      "message": "Código fonte"
+   },
+   "about_links_website": {
+      "message": "Meu site"
+   },
+   "about_mit_license": {
+      "message": "Licença MIT"
+   },
+   "about_title": {
+      "message": "Sobre"
+   },
+   "about_translation_cta_button": {
+      "message": "Comece aqui"
+   },
+   "about_translation_cta_text": {
+      "message": "Encontrou um erro ou quer uma tradução no seu idioma?"
+   },
+   "advanced_actions_copy_all": {
+      "message": "Copiar tudo"
+   },
+   "advanced_actions_generate": {
+      "message": "Gerar"
+   },
+   "advanced_actions_save_config": {
+      "message": "Salvar configuração"
+   },
+   "advanced_copied_msg": {
+      "message": "Copiado para a área de transferência"
+   },
+   "advanced_passphrase_allow_repat_hint": {
+      "message": "Se desativado, cada palavra na frase-senha será única"
+   },
+   "advanced_passphrase_allow_repat_label": {
+      "message": "Permitir repetição"
+   },
+   "advanced_passphrase_length": {
+      "message": "Número de palavras"
+   },
+   "advanced_passphrase_random_case": {
+      "message": "Aleatorizar maiúsculas e minúsculas"
+   },
+   "advanced_passphrase_replace": {
+      "message": "Substituir caracteres aleatórios"
+   },
+   "advanced_passphrase_separate_words_hint": {
+      "message": "Se ativado, a sequência fornecida será colocada entre cada palavra. Se o campo estiver vazio, será usado um espaço em branco"
+   },
+   "advanced_passphrase_separate_words_label": {
+      "message": "Separar palavras com"
+   },
+   "advanced_passphrase_title": {
+      "message": "Gerador de frases-senha"
+   },
+   "advanced_password_length": {
+      "message": "Comprimento da senha"
+   },
+   "advanced_password_min_of_type": {
+      "message": "Número mínimo de caracteres"
+   },
+   "advanced_password_separator1": {
+      "message": "Adicionar separador"
+   },
+   "advanced_password_separator2": {
+      "message": "a cada"
+   },
+   "advanced_password_separator3": {
+      "message": "caractere(s)"
+   },
+   "advanced_password_title": {
+      "message": "Gerador de senhas"
+   },
+   "advanced_saved_msg": {
+      "message": "Configuração salva"
+   },
+   "advanced_title": {
+      "message": "Gerador de senha avançado"
+   },
+   "common_actions_copy": {
+      "message": "Copiar"
+   },
+   "common_actions_reset": {
+      "message": "Redefinir"
+   },
+   "common_characters_ambiguous": {
+      "message": "Ambíguos"
+   },
+   "common_characters_custom": {
+      "message": "Personalizado"
+   },
+   "common_characters_lowercase": {
+      "message": "Minúsculos"
+   },
+   "common_characters_numeric": {
+      "message": "Numéricos"
+   },
+   "common_characters_repeating_hint": {
+      "message": "Cada caractere na senha será único"
+   },
+   "common_characters_repeating_label": {
+      "message": "Repetidos"
+   },
+   "common_characters_similar": {
+      "message": "Semelhantes"
+   },
+   "common_characters_special": {
+      "message": "Especiais"
+   },
+   "common_characters_uppercase": {
+      "message": "Maiúsculos"
+   },
+   "common_sections_exclude": {
+      "message": "Excluir símbolos"
+   },
+   "common_sections_include": {
+      "message": "Incluir símbolos"
+   },
+   "errors_no_characters": {
+      "message": "É necessário selecionar pelo menos um conjunto de caracteres"
+   },
+   "errors_too_long": {
+      "message": "O comprimento é muito longo para gerar uma senha com caracteres únicos"
+   },
+   "errors_too_short": {
+      "message": "O comprimento da senha deve ter pelo menos 4 caracteres"
+   },
+   "manifest_author": {
+      "message": "Eugênio Fox"
+   },
+   "manifest_description": {
+      "message": "Extensão que ajuda você a gerar senhas fortes e personalizadas facilmente em poucos cliques"
+   },
+   "manifest_name": {
+      "message": "Gerador de Senhas"
+   },
+   "popup_advanced": {
+      "message": "Avançado"
+   },
+   "popup_exclude": {
+      "message": "Excluir"
+   },
+   "popup_include": {
+      "message": "Incluir"
+   },
+   "popup_refresh": {
+      "message": "Gerar nova"
+   },
+   "settings_exclude_custom": {
+      "message": "Não use esses caracteres:"
+   },
+   "settings_length_hint": {
+      "message": "Comprimento recomendado: 8–16"
+   },
+   "settings_length_title": {
+      "message": "Comprimento padrão da senha"
+   },
+   "settings_quick_range": {
+      "message": "Intervalo do comprimento de ajuste rápido"
+   },
+   "settings_title": {
+      "message": "Configurações"
+   }
+}
