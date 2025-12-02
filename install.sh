@@ -113,7 +113,7 @@ fc-cache -fv
 
 echo "[*] Installing AUR packages with paru ..."
 retry_cmd sudo -u "$TARGET_USER" paru -S --noconfirm \
-  ungoogled-chromium-bin localsend-bin bibata-cursor-theme-bin curd
+  helium-browser-bin localsend-bin bibata-cursor-theme-bin curd
 
 echo "[*] Adding NOPASSWD to sudoers (insecure!) ..."
 echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >>/etc/sudoers
