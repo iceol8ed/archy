@@ -95,7 +95,7 @@ mkinitcpio -P
 echo "[*] Installing base packages ..."
 retry_cmd pacman -S --noconfirm --needed \
   hyprland xdg-desktop-portal-hyprland hyprshot wl-clipboard mpv \
-  bemenu-wayland nvim foot swaybg polkit-kde-agent cliphist fastfetch \
+  nvim foot swaybg polkit-kde-agent cliphist fastfetch \
   btop zip unzip zsh ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
   noto-fonts noto-fonts-emoji noto-fonts-cjk curl wget base-devel yazi wiremix
 
@@ -113,7 +113,7 @@ fc-cache -fv
 
 echo "[*] Installing AUR packages with paru ..."
 retry_cmd sudo -u "$TARGET_USER" paru -S --noconfirm \
-  helium-browser-bin localsend-bin bibata-cursor-theme-bin curd
+  vicinae-bin helium-browser-bin localsend-bin bibata-cursor-theme-bin curd
 
 echo "[*] Adding NOPASSWD to sudoers (insecure!) ..."
 echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >>/etc/sudoers
