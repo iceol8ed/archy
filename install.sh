@@ -96,7 +96,7 @@ echo "[*] Installing base packages ..."
 retry_cmd pacman -S --noconfirm --needed \
   hyprland xdg-desktop-portal-hyprland hyprshot wl-clipboard mpv \
   nvim foot swaybg wl-clip-persist fuzzel polkit-kde-agent cliphist fastfetch \
-  btop zip unzip zsh ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
+  deluge-gtk btop zip unzip zsh ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
   noto-fonts noto-fonts-emoji noto-fonts-cjk curl wget base-devel yazi wiremix
 
 echo "[*] Installing paru (AUR helper) ..."
