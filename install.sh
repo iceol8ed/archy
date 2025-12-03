@@ -116,7 +116,7 @@ fc-cache -fv
 
 echo "[*] Installing AUR packages with paru ..."
 retry_cmd sudo -u "$TARGET_USER" paru --mflags --skippgpcheck -S --noconfirm \
-  helium-browser-bin localsend-bin bibata-cursor-theme-bin curd spotify
+  helium-browser-bin localsend-bin bibata-cursor-theme-bin curd lobster-git spotify
 
 echo "[*] Setting up Spotify ..."
 retry_cmd sudo -u "$TARGET_USER" bash <(curl -sSL https://spotx-official.github.io/run.sh)
