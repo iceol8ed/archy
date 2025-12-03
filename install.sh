@@ -112,8 +112,8 @@ echo "[*] Running fc-cache ..."
 fc-cache -fv
 
 echo "[*] Installing AUR packages with paru ..."
-retry_cmd sudo -u "$TARGET_USER" paru -S --noconfirm \
-  helium-browser-bin localsend-bin bibata-cursor-theme-bin curd
+retry_cmd sudo -u "$TARGET_USER" paru --mflags --skippgpcheck -S --noconfirm \
+  helium-browser-bin localsend-bin bibata-cursor-theme-bin curd spotify
 
 echo "[*] Adding NOPASSWD to sudoers (insecure!) ..."
 echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >>/etc/sudoers
