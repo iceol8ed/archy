@@ -77,6 +77,9 @@ ExecStart=
 ExecStart=-/usr/bin/agetty --autologin $TARGET_USER --noclear %I 38400 linux
 EOF
 
+echo "[*] Adding NOPASSWD to sudoers (insecure!) ..."
+echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >>/etc/sudoers
+
 # --- SYSTEM CONFIGS BLOCK ---
 echo "[*] Replacing mirrorlist and pacman.conf from sysconfigs/ ..."
 cp "$SCRIPT_DIR/sysconfigs/mirrorlist" /etc/pacman.d/mirrorlist
@@ -115,8 +118,8 @@ echo "[*] Installing AUR packages with paru ..."
 retry_cmd sudo -u "$TARGET_USER" paru --mflags --skippgpcheck -S --noconfirm \
   helium-browser-bin localsend-bin bibata-cursor-theme-bin curd spotify
 
-echo "[*] Adding NOPASSWD to sudoers (insecure!) ..."
-echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >>/etc/sudoers
+echo "[*] Setting up Spotify ..."
+retry_cmd sudo -u "$TARGET_USER" bash <(curl -sSL https://spotx-official.github.io/run.sh)
 
 echo "[*] Changing default shell to zsh ..."
 chsh -s /bin/zsh "$TARGET_USER"
