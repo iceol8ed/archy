@@ -100,13 +100,6 @@ retry_cmd dnf install \
 echo "[*] Running fc-cache ..."
 fc-cache -fv
 
-echo "[*] Installing AUR packages with paru ..."
-retry_cmd sudo -u "$TARGET_USER" paru --mflags --skippgpcheck -S --noconfirm \
-  helium-browser-bin localsend-bin bibata-cursor-theme-bin curd lobster-git spotify
-
-echo "[*] Setting up Spotify ..."
-retry_cmd sudo -u "$TARGET_USER" bash <(curl -sSL https://spotx-official.github.io/run.sh)
-
 echo "[*] Changing default shell to zsh ..."
 chsh -s /bin/zsh "$TARGET_USER"
 
