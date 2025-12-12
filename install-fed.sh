@@ -80,27 +80,27 @@ EOF
 echo "[*] Adding NOPASSWD to sudoers (insecure!) ..."
 echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >>/etc/sudoers
 
-retry_cmd dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-retry_cmd dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-retry_cmd dnf groupinstall "Development Tools" "C Development Tools and Libraries"
-dnf copr enable solopasha/hyprland
-echo "[*] Replacing mkinitcpio.conf and rebuilding initramfs ..."
+#retry_cmd dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+#retry_cmd dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+#retry_cmd dnf groupinstall "Development Tools" "C Development Tools and Libraries"
+#dnf copr enable solopasha/hyprland
+#echo "[*] Replacing mkinitcpio.conf and rebuilding initramfs ..."
 # --- MKINITCPIO BLOCK ---
-cp "$SCRIPT_DIR/sysconfigs/mkinitcpio.conf" /etc/mkinitcpio.conf
+#cp "$SCRIPT_DIR/sysconfigs/mkinitcpio.conf" /etc/mkinitcpio.conf
 # ------------------------
-mkinitcpio -P
-
+#mkinitcpio -P
+dnf install zsh
 echo "[*] Installing base packages ..."
-retry_cmd dnf install \
-  hyprland xdg-desktop-portal-hyprland hyprshot wl-clipboard mpv \
-  bluetui nvim foot swaybg wl-clip-persist fuzzel hyprpolkitagent cliphist fastfetch \
-  deluge-gtk btop zip unzip zsh ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
-  noto-fonts noto-fonts-emoji noto-fonts-cjk curl wget base-devel yazi wiremix
+#retry_cmd dnf install \
+#  hyprland xdg-desktop-portal-hyprland hyprshot wl-clipboard mpv \
+# bluetui nvim foot swaybg wl-clip-persist fuzzel hyprpolkitagent cliphist fastfetch \
+#deluge-gtk btop zip unzip zsh ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
+#noto-fonts noto-fonts-emoji noto-fonts-cjk curl wget base-devel yazi wiremix
 
-echo "[*] Running fc-cache ..."
-fc-cache -fv
+#echo "[*] Running fc-cache ..."
+#fc-cache -fv
 
-echo "[*] Changing default shell to zsh ..."
+#echo "[*] Changing default shell to zsh ..."
 chsh -s /bin/zsh "$TARGET_USER"
 
 echo "[*] Installing Prezto framework ..."
@@ -120,29 +120,12 @@ chown -R "$TARGET_USER:$TARGET_USER" "$HOME_DIR/.zprezto/runcoms/"
 # --- END: NEW/MODIFIED BLOCK FOR PREZTO CONFIG ---
 
 # --- START: CORRECTED CACHE CLEANING BLOCK ---
-echo "[*] Clearing Pacman and Paru package caches (will answer 'Yes' to all prompts) ..."
 
 # 1. Clear Pacman cache: 'yes | pacman -Scc' pipes 'y' to both prompts,
 # ensuring the second, space-clearing prompt is answered 'Yes'.
-echo "[*] Clearing Pacman cache..."
-yes | pacman -Scc
 
 # 2. Clear Paru cache (must be run as the target user):
 # 'yes | paru -Scc' ensures 'Yes' is provided to both prompts.
-echo "[*] Clearing Paru cache..."
-sudo -u "$TARGET_USER" bash -c 'yes | paru -Scc'
 # --- END: CORRECTED CACHE CLEANING BLOCK ---
 
-echo "[*] Cleaning up: deleting script folder ..."
-cd /
-rm -rf "$SCRIPT_DIR"
-
 echo "[*] Done!"
-
-read -rp "[?] System configuration is complete. Would you like to reboot now? (Y/n): " REBOOT_CHOICE
-if [[ -z "$REBOOT_CHOICE" || "$REBOOT_CHOICE" =~ ^[Yy]$ ]]; then
-  echo "[*] Rebooting system..."
-  reboot
-else
-  echo "[*] Not rebooting. Please reboot manually for changes to take full effect."
-fi
